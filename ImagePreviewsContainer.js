@@ -139,7 +139,7 @@ class ImagePreviewsContainer extends Component {
       //process selected files
       reader.onloadend = () => {
         this.props.addImage(
-          file,//of type File that can be directly uploaded to firebase storage using "put" method
+          file,
           reader.result//of type Data URL for preview purposes only see (https://en.wikipedia.org/wiki/Data_URI_scheme & https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL))
         );
       }
@@ -172,8 +172,8 @@ class ImagePreviewsContainer extends Component {
           {
             this.props.imagesFromDB.map( 
               (image) => (
-                <Col xs={12} sm={6} md={4} lg={3} key={image.large} >
-                  <ImagePreview url={image.large} fromDB={true} onImageSelect={this.handleImageSelect.bind(this)}
+                <Col xs={12} sm={6} md={4} lg={3} key={image.url} >
+                  <ImagePreview url={image.url} fromDB={true} onImageSelect={this.handleImageSelect.bind(this)}
                   onImageDelete={this.handleDeleteImage.bind(this)}/>
                 </Col>
               )
