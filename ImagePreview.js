@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
-import MdCancel from 'react-icons/lib/md/cancel'
+import MdClose from 'react-icons/lib/md/close'
 import { Button } from 'react-bootstrap';
 
 
@@ -26,17 +26,20 @@ const Loading = (props) => {
 </div>
 }
 
-const DeleteButton = styled(MdCancel)`
+const DeleteButton = styled(MdClose)`
   
   width:20px;
   height:20px;
   position: absolute;
   top: 10px;
   right: 10px;
-  opacity: .7;
+  border-radius: 10px;
   cursor: pointer;
+  fill:rgba(255,255,255,.7);
+  background:rgba(0,0,0,.8);
   &:hover {
-    opacity: 1;
+    fill:rgba(0,0,0,1);
+    background:rgba(255,255,255,1);
   }
 `;
 
